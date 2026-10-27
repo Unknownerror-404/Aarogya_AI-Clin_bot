@@ -124,4 +124,6 @@ python app.py
 
 This should open a site that provides a preview of our clinical chatbot.
 
+If you'd rather view the working, flow the following redirect for a tutorial/use example of our project.
+
 [![Clin-Bot Demo](https://img.youtube.com/vi/BHxhpPbJqY8/hqdefault.jpg)](https://www.youtube.com/watch?v=BHxhpPbJqY8)
