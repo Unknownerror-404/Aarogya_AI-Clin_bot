@@ -1,11 +1,14 @@
-# CLIN-BOT
+# Aarogya_AI/CLIN-BOT
+
+Clin-bot is a RASA-based fullstack application designed for the digitization of sensitive patient data, ranging from visit timings to personal medical history. It enables real-time communication between patients and doctors through an integrated chat feature and provides a foundational chatbot to help new learners get started with medical assistance from day one.
 
 ## How to download and use:
 
-### 1] Training the rasa model and setup to create a local server.
+### 1] Training the Rasa model and setting up a local server.
 
-To use this instance of rasa, install rasa and rasa.sdk from the requirements.txt file.
-Initially make sure all files have been installed properly and setup the structrue correctly as:
+To use this instance of Rasa, install rasa and rasa.sdk from the requirements.txt file.
+First, make sure all files have been installed properly and set up the structure correctly as follows:
+
 ```
 main_directory/
 │
@@ -49,10 +52,9 @@ main_directory/
     └── test_stories.yml
 ```
 
-struture your directory as shown above:
+Structure your directory as shown above.
 
-Ensure you have a python version from 3.8 to 3.11 as rasa is incompatible with recent 3.11 > versions.
-After ensure you have a compatible version most favourably python 3.11, install the following packages from  requirements.txt
+Ensure you have a Python version from 3.8 to 3.11, as Rasa is incompatible with versions newer than 3.11. After ensuring you have a compatible version, preferably Python 3.11, install the following packages from requirements.txt:
 ```
 =============== required packages ===================
 rasa
@@ -63,8 +65,7 @@ flask
 Flask-Session
 ==================++++++++++++========================
 ```
-Upon completion, ensure you've located the correct directory and structure as well, change your current directroy to the main_directory as mentioned above.
-and perform the following commands:
+Once installation is complete, ensure you're in the correct directory with the proper structure. Change your current directory to the main_directory, then run the following commands:
 ```
 ===================== cmd prompt ========================
 > rasa train
@@ -77,12 +78,10 @@ and perform the following commands:
 
 ### 2] Creating a sql server:
 
-After creating the rasa server, to access all features from our website please go to the following link:
+After creating the Rasa server, to access all features from our website, go to the following link:
 https://www.microsoft.com/en-in/sql-server/sql-server-downloads/
 
-scroll down a bit and ensure that you download sql server express 2022. 
-Move onto installation selecting a basic server configuration when prompted.
-upon completion, close out of the setup, and go to your local cmd prompt to perform sql cmommands on it, type the following:
+Scroll down and download SQL Server Express 2022. Proceed with the installation, selecting a basic server configuration when prompted. Upon completion, close out of the setup, and go to your local command prompt to perform SQL commands. Type the following:
 ```
 ======================= cmd prompt ============================
 sqlcmd -S .\SQLEXPRESS -E
@@ -93,10 +92,10 @@ sqlcmd -S .\SQLEXPRESS -E
 ======================= sqlcmd prompt =========================
  CREATE DATABASE model;
  GO
- // This will create a sql database named model, which can be used as:
+ -- This will create a sql database named model, which can be used as:
  USE model
  GO
- //Then create the follwing tables which are required to store user login info and chat session infos for dynamic data loading. 
+ -- Then create the follwing tables which are required to store user login info and chat session infos for dynamic data loading. 
  CREATE TABLE Users (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
     Email NVARCHAR(255) NOT NULL,
@@ -104,7 +103,7 @@ sqlcmd -S .\SQLEXPRESS -E
     CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
     person_name NVARCHAR(100) NOT NULL
  ); 
- //Creating user data storage, currently prototype form.
+ -- Creating user data storage, currently prototype form.
  CREATE TABLE ChatSessions (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     UserId INT NOT NULL,
@@ -120,7 +119,9 @@ sqlcmd -S .\SQLEXPRESS -E
 This should create the required sql tables to work properly with the remaining code.
 
 ### 3] Creating a local host-server for testing using app.py
-Once you have the rasa and sql servers up and running, go to your code editor, and execute the app.py file from this repo, 
-e.g. if you are using vs code, go to your working directory, and play the python script with python app.py.
+Once you have both the Rasa and SQL servers running, open your code editor and execute the app.py file from this repository. For example, if you are using VS Code, navigate to your working directory and run the Python script with:
+python app.py
 
-This should redirect you to a site which provides a glimpse at our clinical chatbot.
+This should open a site that provides a preview of our clinical chatbot.
+
+<iframe width="560" height="315" src="https://youtu.be/BHxhpPbJqY8" title="Clin-Bot Demo" frameborder="0" allowfullscreen></iframe>
