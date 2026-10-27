@@ -129,6 +129,8 @@ This should open a site that provides a preview of our clinical chatbot.
   height="315"
   src="https://www.youtube.com/embed/BHxhpPbJqY8"
   title="Clin-Bot Demo"
-  frameborder="0"
+  style="border: 0;"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen>
 </iframe>
