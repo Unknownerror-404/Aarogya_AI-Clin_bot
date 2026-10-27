@@ -124,4 +124,11 @@ python app.py
 
 This should open a site that provides a preview of our clinical chatbot.
 
-<iframe width="560" height="315" src="https://youtu.be/BHxhpPbJqY8" title="Clin-Bot Demo" frameborder="0" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/BHxhpPbJqY8"
+  title="Clin-Bot Demo"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
